@@ -150,7 +150,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('section:not(.hero), .service-card, .portfolio-card, .project-card, .why-card, .pricing-card, .faq-item, .contact-card, .about-card, .trust-stat-card, .profile-card').forEach(el => {
+document.querySelectorAll('section:not(.hero), .service-card, .portfolio-card, .project-card, .why-card, .pricing-card, .faq-item, .contact-card, .about-card, .trust-stat-card, .profile-card, .skill-category, .process-card').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
