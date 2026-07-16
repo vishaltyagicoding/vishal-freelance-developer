@@ -1,10 +1,10 @@
 /* ============================================
-   VISHAL TYAGI — V5 PORTFOLIO
-   Portfolio (Real) + Projects (Demo) Separated
+   VISHAL TYAGI — PREMIUM PORTFOLIO V6
+   Interactive Effects & Animations
    ============================================ */
 
 // ============================================
-// PORTFOLIO — REAL WORK (GREEN/BLUE ACCENT)
+// DATA
 // ============================================
 const portfolioData = [
     {
@@ -42,9 +42,6 @@ const portfolioData = [
     },
 ];
 
-// ============================================
-// PROJECTS — DEMO CASE STUDIES (PURPLE ACCENT)
-// ============================================
 const projectsData = [
     {
         id: 1,
@@ -88,6 +85,29 @@ const projectsData = [
 ];
 
 // ============================================
+// MOUSE GLOW EFFECT
+// ============================================
+const mouseGlow = document.getElementById('mouseGlow');
+let mouseX = 0, mouseY = 0;
+let glowX = 0, glowY = 0;
+
+if (mouseGlow && window.innerWidth > 768) {
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateGlow() {
+        glowX += (mouseX - glowX) * 0.1;
+        glowY += (mouseY - glowY) * 0.1;
+        mouseGlow.style.left = glowX + 'px';
+        mouseGlow.style.top = glowY + 'px';
+        requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+}
+
+// ============================================
 // NAVIGATION
 // ============================================
 const navbar = document.getElementById('navbar');
@@ -123,6 +143,7 @@ navLinks.forEach(link => {
         const target = document.querySelector(link.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
         navMenu.classList.remove('active');
+        hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
     });
 });
 
@@ -144,28 +165,98 @@ hamburger.addEventListener('click', () => {
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            const delay = entry.target.dataset.delay || 0;
+            setTimeout(() => {
+                entry.target.classList.add('revealed');
+            }, parseInt(delay));
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('section:not(.hero), .service-card, .portfolio-card, .project-card, .why-card, .pricing-card, .faq-item, .contact-card, .about-card, .trust-stat-card, .profile-card, .skill-category, .process-card').forEach(el => {
-    el.classList.add('reveal');
+document.querySelectorAll('[data-reveal]').forEach(el => {
     revealObserver.observe(el);
 });
 
+// Section reveal for staggered children
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const children = entry.target.querySelectorAll('[data-reveal]');
+            children.forEach((child, i) => {
+                const baseDelay = parseInt(child.dataset.delay) || 0;
+                setTimeout(() => {
+                    child.classList.add('revealed');
+                }, baseDelay + (i * 50));
+            });
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('[data-reveal-section]').forEach(el => {
+    sectionObserver.observe(el);
+});
+
 // ============================================
-// RENDER PORTFOLIO — REAL WORK
+// EXPERIENCE TIMELINE PROGRESS
+// ============================================
+const timelineProgress = document.querySelector('.timeline-progress');
+if (timelineProgress) {
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                timelineProgress.style.height = '100%';
+                timelineObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    timelineObserver.observe(document.querySelector('.experience-timeline'));
+}
+
+// ============================================
+// MAGNETIC BUTTONS
+// ============================================
+document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+    });
+});
+
+// ============================================
+// TILT CARDS
+// ============================================
+document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    });
+});
+
+// ============================================
+// RENDER PORTFOLIO
 // ============================================
 function renderPortfolio(filter = 'all') {
     const grid = document.getElementById('portfolioGrid');
     if (!grid) return;
-
     const filtered = filter === 'all' ? portfolioData : portfolioData.filter(p => p.type === filter);
-
     grid.innerHTML = filtered.map((project, i) => `
-        <div class="portfolio-card" data-type="${project.type}" style="animation: fadeInUp 0.5s ease ${i * 0.15}s both">
+        <div class="portfolio-card" data-type="${project.type}" style="animation: fadeInUp 0.6s ease ${i * 0.15}s both">
             <div class="port-thumb">
                 <i class="fas ${project.icon}"></i>
                 <span class="port-status ${project.statusType}">${project.status}</span>
@@ -197,14 +288,13 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // ============================================
-// RENDER PROJECTS — DEMO CASE STUDIES
+// RENDER PROJECTS
 // ============================================
 function renderProjects() {
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
-
     grid.innerHTML = projectsData.map((project, i) => `
-        <div class="project-card" style="animation: fadeInUp 0.5s ease ${i * 0.15}s both">
+        <div class="project-card" style="animation: fadeInUp 0.6s ease ${i * 0.15}s both">
             <div class="proj-header">
                 <span class="proj-label">Demo Case Study</span>
                 <h3>${project.name}</h3>
@@ -255,11 +345,35 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 // ============================================
+// PARALLAX EFFECTS
+// ============================================
+let ticking = false;
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const scrolled = window.scrollY;
+            // Floating icons parallax
+            document.querySelectorAll('.float-icon').forEach((icon, i) => {
+                const speed = 0.05 + (i * 0.02);
+                icon.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            // Aurora blobs parallax
+            document.querySelectorAll('.aurora-blob').forEach((blob, i) => {
+                const speed = 0.02 + (i * 0.01);
+                blob.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+// ============================================
 // INIT
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     renderPortfolio();
     renderProjects();
-    console.log('%cVishal Tyagi Portfolio V5 — Ready', 'color: #10b981; font-size: 14px; font-weight: bold;');
-    console.log('%cPortfolio = Real Work | Projects = Demo/Case Studies', 'color: #8b5cf6;');
+    console.log('%cVishal Tyagi Portfolio V6 — Premium Edition', 'color: #8b5cf6; font-size: 14px; font-weight: bold;');
+    console.log('%cDesigned with Apple-level polish', 'color: #06b6d4;');
 });
