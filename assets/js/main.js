@@ -16,7 +16,14 @@ const portfolioData = [
         status: "Live",
         statusType: "live",
         link: "https://smartriskfx.com",
-        icon: "fa-chart-line"
+        icon: "fa-chart-line",
+    //     screenshots: [
+    //     "assets/images/Screenshot (1068).png",
+    //     "assets/images/Screenshot (1069).png",
+    //     "assets/images/Screenshot (1070).png",
+    //     "assets/images/Screenshot (1071).png",
+        
+    // ]
     },
     {
         id: 2,
@@ -272,6 +279,11 @@ function renderPortfolio(filter = 'all') {
                     <a href="${project.link}" class="port-live" target="_blank" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> View Live Project
                     </a>
+                    <!-- <a href="javascript:void(0)"
+                     class="port-demo"
+                     onclick="showScreenshots(${project.id})">
+                         <i class="fas fa-images"></i> Screen Demo
+                    </a>-->
                 </div>
             </div>
         </div>
@@ -367,6 +379,65 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 });
+
+
+
+
+function showScreenshots(projectId) {
+
+    const project = portfolioData.find(
+        p => p.id === projectId
+    );
+
+    if (!project || !project.screenshots?.length) {
+        alert("No screenshots available");
+        return;
+    }
+
+    const gallery = project.screenshots.map(img => `
+        <div style="margin-bottom:20px;">
+            <img src="${img}"
+                 style="
+                 width:100%;
+                 max-width:1200px;
+                 border-radius:12px;
+                 display:block;
+                 margin:auto;
+                 box-shadow:0 0 20px rgba(0,0,0,.4);
+                 ">
+        </div>
+    `).join('');
+
+    const newWindow = window.open('', '_blank');
+
+    newWindow.document.write(`
+        <html>
+        <head>
+            <title>${project.name} Screenshots</title>
+            <style>
+                body{
+                    background:#0f172a;
+                    padding:30px;
+                    margin:0;
+                    font-family:Arial,sans-serif;
+                }
+
+                h1{
+                    color:white;
+                    text-align:center;
+                    margin-bottom:30px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>${project.name}</h1>
+            ${gallery}
+        </body>
+        </html>
+    `);
+
+    newWindow.document.close();
+}
 
 // ============================================
 // INIT
