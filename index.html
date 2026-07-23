@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Vishal Tyagi | Websites & Mobile Apps for Businesses</title>
     <meta name="description" content="I help startups, gyms, hostels, local businesses and entrepreneurs build fast, modern websites, mobile apps and business systems. Based in Bhopal, India.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,12 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-<base target="_blank">
-<base target="_blank">
 </head>
 <body>
 
-    <!-- NAVIGATION — NEW ORDER: About → Services → Portfolio → Projects → Pricing → Contact -->
+    <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -31,18 +29,17 @@
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
-                <!-- <a href="#pricing" class="nav-link">Pricing</a> -->
-                <!-- <a href="#contact" class="nav-link">Contact</a> -->
             </div>
-            <a href="#contact" class="nav-whatsapp">
-                <!-- <i class="fab fa-whatsapp"></i> -->
+            <a href="#contact" class="nav-whatsapp" target="_self">
                 <span>Work With Me</span>
             </a>
-            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- HERO — 2-COLUMN WITH PROFILE PHOTO -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-bg">
             <div class="hero-gradient"></div>
@@ -88,7 +85,7 @@
                 </div>
 
                 <div class="hero-ctas">
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20a%20free%20consultation" class="btn btn-whatsapp btn-lg" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20a%20free%20consultation" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Get Free Consultation
                     </a>
                     <a href="#portfolio" class="btn btn-outline btn-lg">
@@ -104,13 +101,14 @@
                     <span><i class="fas fa-check"></i> LinkedIn Verified</span>
                 </div>
             </div>
-          <div class="hero-right">
+            <div class="hero-right">
                 <div class="authority-panel">
-                    <div class="ap-header">
-                        <i class="fas fa-layer-group ap-header-icon"></i>
+                    <div class="authority-glow"></div>
+                    <div class="authority-header">
+                        <span class="authority-icon"><i class="fas fa-layer-group"></i></span>
                         <h3>What I Build</h3>
                     </div>
-                    <ul class="ap-list">
+                    <ul class="authority-list">
                         <li><i class="fas fa-check"></i> Business Websites</li>
                         <li><i class="fas fa-check"></i> Mobile Applications</li>
                         <li><i class="fas fa-check"></i> Admin Dashboards</li>
@@ -119,30 +117,23 @@
                         <li><i class="fas fa-check"></i> Business Automation</li>
                         <li><i class="fas fa-check"></i> API Development</li>
                         <li><i class="fas fa-check"></i> Cloud Deployment</li>
-                        <li><i class="fas fa-check"></i> Payment Integration</li>
-                        <li><i class="fas fa-check"></i> Web Scraping</li>
                     </ul>
-                    <div class="ap-divider"></div>
-                    <div class="ap-tech">
-                        <span>Flutter</span>
-                        <span>Django</span>
-                        <span>Python</span>
-                        <span>DRF</span>
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>AWS</span>
-                        <span>Docker</span>
-                        <span>PostgreSQL</span>
-                        <span>Redis</span>
-                        <span>Celery</span>
-                        <span>REST APIs</span>
-                        <span>AI/ML</span>
-                        <span>GitHub</span>
+                    <div class="authority-divider"></div>
+                    <div class="authority-tech">
+                        <span class="at-tag">Flutter</span>
+                        <span class="at-tag">Django</span>
+                        <span class="at-tag">React</span>
+                        <span class="at-tag">AWS</span>
+                        <span class="at-tag">Docker</span>
+                        <span class="at-tag">PostgreSQL</span>
+                        <span class="at-tag">Redis</span>
+                        <span class="at-tag">AI/ML</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- ANIMATED STATS -->
     <section class="stats-section" id="stats">
         <div class="container">
@@ -167,7 +158,6 @@
         </div>
     </section>
 
-
     <!-- TRUST BAR -->
     <section class="trust-bar-section">
         <div class="container">
@@ -182,7 +172,46 @@
         </div>
     </section>
 
-    <!-- PROFESSIONAL PROFILES — GitHub + LinkedIn -->
+    <!-- PROOF OF WORK -->
+    <section class="proof-section" id="proof">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Evidence</span>
+                <h2 class="section-title">Proof Of Work</h2>
+                <p class="section-desc">Numbers backed by real, verifiable work.</p>
+            </div>
+            <div class="proof-grid" id="proofStats"></div>
+        </div>
+    </section>
+
+    <!-- GITHUB SHOWCASE -->
+    <section class="github-showcase" id="github-showcase">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Live Code Activity</span>
+                <h2 class="section-title">GitHub Stats</h2>
+                <p class="section-desc">Real-time stats pulled directly from my GitHub profile.</p>
+            </div>
+            <div class="github-widgets-grid">
+                <div class="github-widget-card">
+                    <img src="assets\images\Screenshot (27).png" alt="GitHub Stats" loading="lazy">
+                </div>
+                <div class="github-widget-card">
+                    <img src="https://streak-stats.demolab.com/?user=vishaltyagicoding&theme=dark&background=161620&ring=8b5cf6&fire=a78bfa&currStreakLabel=a78bfa&sideLabels=a1a1aa&dates=71717a&border=1f1f2b" alt="GitHub Streak" loading="lazy">
+                </div>
+                <div class="github-widget-card github-widget-wide">
+                    <img src="assets\images\top-languages.png" alt="Top Languages" loading="lazy">
+                </div>
+            </div>
+            <div class="github-cta">
+                <a href="https://github.com/vishaltyagicoding" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> View Full GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL PROFILES -->
     <section class="profiles" id="profiles">
         <div class="container">
             <div class="section-header">
@@ -261,35 +290,6 @@
         </div>
     </section>
 
-
-     <!-- FOUNDER STORY -->
-    <section class="founder-story" id="founder-story">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">My Story</span>
-                <h2 class="section-title">Meet Vishal</h2>
-            </div>
-            <div class="founder-grid">
-                <div class="founder-photo">
-                    <img src="assets/images/profile.jpg" alt="Vishal Tyagi, Full Stack Developer and AI & ML Engineer" loading="lazy">
-                    <div class="founder-badge">Vishal Tyagi<br><span>Full Stack Developer · Flutter Developer · Django Developer · AI &amp; ML Engineer · Freelance Software Consultant</span></div>
-                </div>
-                <div class="founder-content">
-                    <p>My journey started with curiosity about how apps and websites actually work behind the scenes. That curiosity turned into a B.Tech in AI &amp; Machine Learning and years of hands-on development across web, mobile and backend systems.</p>
-                    <p>My problem-solving approach is simple: understand the real business problem first, then build the smallest, cleanest solution that solves it — not the most complicated one.</p>
-                    <p>My development philosophy is built on direct communication, clean and scalable code, and staying involved after launch, not disappearing once the invoice is paid.</p>
-                    <div class="founder-timeline">
-                        <div class="ft-item"><span class="ft-dot"></span><span>Started Programming</span></div>
-                        <div class="ft-item"><span class="ft-dot"></span><span>Built Projects</span></div>
-                        <div class="ft-item"><span class="ft-dot"></span><span>Full Stack Development</span></div>
-                        <div class="ft-item"><span class="ft-dot"></span><span>AI &amp; ML Engineering</span></div>
-                        <div class="ft-item"><span class="ft-dot"></span><span>Freelancing</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- EXPERIENCE -->
     <section class="experience" id="experience">
         <div class="container">
@@ -329,7 +329,7 @@
                     <div class="exp-header">
                         <div class="exp-company-info">
                             <h3>Custom Software & Automation</h3>
-                            <span class="exp-date">2025</span>
+                            <span class="exp-date">2024 — Present</span>
                         </div>
                         <div class="exp-role">Software Developer & Automation Engineer</div>
                     </div>
@@ -353,7 +353,7 @@
                     <div class="exp-header">
                         <div class="exp-company-info">
                             <h3>Trading & AI Solutions</h3>
-                            <span class="exp-date">2026</span>
+                            <span class="exp-date">2024 — Present</span>
                         </div>
                         <div class="exp-role">AI & Trading Platform Developer</div>
                     </div>
@@ -387,12 +387,11 @@
                 <p class="section-desc">From startups to enterprise solutions, business-focused and technical expertise.</p>
             </div>
             <div class="services-grid">
-                <!-- OLD SERVICES -->
                 <div class="service-card">
                     <div class="svc-icon"><i class="fas fa-globe"></i></div>
                     <h3>Business Websites</h3>
                     <p>Professional websites that establish your online presence and attract customers.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20a%20business%20website" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20a%20business%20website" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -400,7 +399,7 @@
                     <div class="svc-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Mobile App Development</h3>
                     <p>iOS and Android apps built with Flutter. One codebase, two platforms.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20build%20a%20mobile%20app" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20build%20a%20mobile%20app" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -408,7 +407,7 @@
                     <div class="svc-icon"><i class="fas fa-server"></i></div>
                     <h3>Backend API Development</h3>
                     <p>Scalable APIs and server infrastructure that power your app or website.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20backend%20development" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20backend%20development" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -416,7 +415,7 @@
                     <div class="svc-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI Integrations</h3>
                     <p>Add smart features — chatbots, automation, and intelligent systems.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20integrate%20AI" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20integrate%20AI" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -424,7 +423,7 @@
                     <div class="svc-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Admin Dashboards</h3>
                     <p>Custom dashboards to manage your business data in one place.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20an%20admin%20dashboard" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20an%20admin%20dashboard" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -432,12 +431,10 @@
                     <div class="svc-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Business Automation Tools</h3>
                     <p>Automate repetitive tasks — notifications, reports, data processing.</p>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20business%20automation" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20business%20automation" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
-
-                <!-- NEW SERVICES -->
                 <div class="service-card">
                     <div class="svc-icon"><i class="fas fa-brain"></i></div>
                     <h3>LLM & Agentic AI Architecture</h3>
@@ -448,7 +445,7 @@
                         <span>Vector Search</span>
                         <span>Prompt Engineering</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20LLM%20%26%20Agentic%20AI%20Architecture%20for%20my%20project" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20LLM%20%26%20Agentic%20AI%20Architecture%20for%20my%20project" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -462,7 +459,7 @@
                         <span>Guardrails</span>
                         <span>Observability</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20AI%20Platform%20%26%20LLMOps%20infrastructure" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20AI%20Platform%20%26%20LLMOps%20infrastructure" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -476,7 +473,7 @@
                         <span>REST / GraphQL</span>
                         <span>Microservices</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Backend%20%26%20Microservices%20Architecture%20for%20my%20system" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Backend%20%26%20Microservices%20Architecture%20for%20my%20system" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -490,7 +487,7 @@
                         <span>Docker</span>
                         <span>CI/CD</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Cloud-Native%20Infrastructure%20setup%20for%20my%20services" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Cloud-Native%20Infrastructure%20setup%20for%20my%20services" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -504,7 +501,7 @@
                         <span>Performance</span>
                         <span>Scalability</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Architecture%20Review%20%26%20Audit%20for%20my%20system" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Architecture%20Review%20%26%20Audit%20for%20my%20system" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
@@ -518,13 +515,14 @@
                         <span>Team Mentoring</span>
                         <span>Design Reviews</span>
                     </div>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Startup%20Technical%20Advisory%20and%20mentorship" class="svc-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20Startup%20Technical%20Advisory%20and%20mentorship" class="svc-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Discuss on WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- CONVERSION CTA -->
     <section class="cta-banner">
         <div class="container">
@@ -534,7 +532,7 @@
                     <p>Book a free 15-minute consultation to discuss your project.</p>
                 </div>
                 <div class="cta-banner-buttons">
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Book Free Consultation
                     </a>
                     <a href="mailto:alberttyagi123@gmail.com?subject=Project%20Estimate%20Request" class="btn btn-outline">
@@ -544,7 +542,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- SKILLS & TECHNOLOGIES -->
     <section class="skills" id="skills">
@@ -613,52 +610,41 @@
                     </div>
                 </div>
             </div>
-            <!-- add space between both div -->
-                <div style="height: 50px;"></div>
-            <!-- CREDENTIALS -->
 
+            <div style="height: 50px;"></div>
+
+            <!-- CREDENTIALS -->
             <div class="section-header">
                 <span class="section-tag">Credentials</span>
                 <h2 class="section-title">Certifications & Education</h2>
-                <!-- <p class="section-desc">Deep expertise across AI, backend, and infrastructure systems.</p> -->
             </div>
-            <!-- start -->
-             <div class="section-inner">
-        <div class="cert-grid">
-
-          <div class="cert-card fade-in visible">
-            <div class="cert-icon" aria-hidden="true">🎓</div>
-            <div class="cert-info">
-              <h4>Generative AI Development</h4>
-              <!-- <p>Boston Institute of Analytics &nbsp;·&nbsp; Feb 2026</p> -->
+            <div class="section-inner">
+                <div class="cert-grid">
+                    <div class="cert-card fade-in visible">
+                        <div class="cert-icon" aria-hidden="true">🎓</div>
+                        <div class="cert-info">
+                            <h4>Generative AI Development</h4>
+                        </div>
+                    </div>
+                    <div class="cert-card fade-in visible">
+                        <div class="cert-icon" aria-hidden="true">🤖</div>
+                        <div class="cert-info">
+                            <h4>Agentic AI Development</h4>
+                        </div>
+                    </div>
+                    <div class="cert-card fade-in visible">
+                        <div class="cert-icon" aria-hidden="true">💻</div>
+                        <div class="cert-info">
+                            <h4>B.Tech – Artificial Intelligence &amp; Machine Learning Engineering</h4>
+                            <p>Undergraduate Degree</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="cert-card fade-in visible">
-            <div class="cert-icon" aria-hidden="true">🤖</div>
-            <div class="cert-info">
-              <h4>Agentic AI Development</h4>
-              <!-- <p>Boston Institute of Analytics &nbsp;·&nbsp; Feb 2026</p> -->
-            </div>
-          </div>
-          
-          <div class="cert-card fade-in visible">
-            <div class="cert-icon" aria-hidden="true">💻</div>
-            <div class="cert-info">
-              <h4>B.Tech – Artificial Intelligence &amp; Machine Learning Engineering</h4>
-              <p>Undergraduate Degree</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-            <!-- end -->
         </div>
     </section>
 
-    <!-- ============================================
-         PROCESS — HOW I WORK
-         ============================================ -->
+    <!-- PROCESS -->
     <section class="process" id="process">
         <div class="container">
             <div class="section-header">
@@ -725,9 +711,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         PORTFOLIO — REAL WORK (GREEN/BLUE ACCENT)
-         ============================================ -->
+    <!-- PORTFOLIO -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-header">
@@ -744,6 +728,7 @@
             <div class="portfolio-grid" id="portfolioGrid"></div>
         </div>
     </section>
+
     <!-- CONVERSION CTA -->
     <section class="cta-banner">
         <div class="container">
@@ -753,7 +738,7 @@
                     <p>Book a free 15-minute consultation to discuss your project.</p>
                 </div>
                 <div class="cta-banner-buttons">
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Book Free Consultation
                     </a>
                     <a href="mailto:alberttyagi123@gmail.com?subject=Project%20Estimate%20Request" class="btn btn-outline">
@@ -764,10 +749,7 @@
         </div>
     </section>
 
-
-    <!-- ============================================
-         PROJECTS — DEMO / CASE STUDIES (PURPLE ACCENT)
-         ============================================ -->
+    <!-- PROJECTS -->
     <section class="projects" id="projects">
         <div class="container">
             <div class="section-header">
@@ -778,7 +760,27 @@
             <div class="projects-grid" id="projectsGrid"></div>
         </div>
     </section>
-    
+
+    <!-- CONVERSION CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-banner-inner">
+                <div class="cta-banner-text">
+                    <h3>Ready to Build Something Great?</h3>
+                    <p>Book a free 15-minute consultation to discuss your project.</p>
+                </div>
+                <div class="cta-banner-buttons">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Book Free Consultation
+                    </a>
+                    <a href="mailto:alberttyagi123@gmail.com?subject=Project%20Estimate%20Request" class="btn btn-outline">
+                        <i class="fas fa-calculator"></i> Request Project Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY CHOOSE ME -->
     <section class="why" id="why">
         <div class="container">
@@ -820,6 +822,7 @@
             </div>
         </div>
     </section>
+
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -828,115 +831,40 @@
                 <h2 class="section-title">What Clients Say</h2>
                 <p class="section-desc">Real feedback from real projects.</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card placeholder">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Vishal delivered our trading platform on time with exceptional quality. The real-time dashboard exceeded our expectations."</p>
-                    <div class="testimonial-author">
-                        <div class="ta-avatar">S</div>
-                        <div class="ta-info">
-                            <strong>SmartRiskFX Client</strong>
-                            <span>Trading Platform</span>
-                        </div>
-                    </div>
+            <div class="carousel" id="testiCarousel">
+                <button type="button" class="carousel-arrow carousel-arrow-left" id="testiPrev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="testiTrack"></div>
                 </div>
-                <div class="testimonial-card placeholder">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"The gym management app transformed how we handle memberships. Automated reminders alone saved us hours every week."</p>
-                    <div class="testimonial-author">
-                        <div class="ta-avatar">G</div>
-                        <div class="ta-info">
-                            <strong>Gym Owner</strong>
-                            <span>Mobile App Development</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card placeholder">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Professional, responsive, and technically skilled. Vishal understood our requirements and delivered a solution that actually works."</p>
-                    <div class="testimonial-author">
-                        <div class="ta-avatar">D</div>
-                        <div class="ta-info">
-                            <strong>Dairy Shop Owner</strong>
-                            <span>Business Management App</span>
-                        </div>
-                    </div>
-                </div>
+                <button type="button" class="carousel-arrow carousel-arrow-right" id="testiNext" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
             </div>
+            <div class="carousel-dots" id="testiDots"></div>
         </div>
     </section>
 
-
-    <!-- PRICING -->
-    <!-- <section class="pricing" id="pricing">
+    <!-- LINKEDIN RECOMMENDATIONS -->
+    <section class="recommendations" id="recommendations">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Pricing</span>
-                <h2 class="section-title">Simple, Affordable Pricing</h2>
-                <p class="section-desc">No hidden fees. Free consultation before every project.</p>
+                <span class="section-tag">Verified Network</span>
+                <h2 class="section-title">Recommendations</h2>
+                <p class="section-desc">What colleagues and clients say on LinkedIn.</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="price-best">Best For Small Businesses</div>
-                    <div class="price-tag">Starter Website</div>
-                    <div class="price-amount">₹5,999</div>
-                    <p class="price-desc">Perfect for small businesses starting their online presence.</p>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Landing Page</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
-                        <li><i class="fas fa-check"></i> Contact Form</li>
-                        <li><i class="fas fa-check"></i> WhatsApp Integration</li>
-                        <li><i class="fas fa-check"></i> Basic SEO</li>
-                    </ul>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I'm%20interested%20in%20the%20Starter%20Website%20package%20for%20Rs%204999" class="btn btn-whatsapp btn-full" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Get Started
-                    </a>
+            <div class="carousel" id="recCarousel">
+                <button type="button" class="carousel-arrow carousel-arrow-left" id="recPrev" aria-label="Previous recommendation"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="recTrack"></div>
                 </div>
-                <div class="pricing-card popular">
-                    <div class="price-popular">Most Popular</div>
-                    <div class="price-tag">Business Website</div>
-                    <div class="price-amount">₹19,999</div>
-                    <p class="price-desc">Complete website solution for growing businesses.</p>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Multi-page Website</li>
-                        <li><i class="fas fa-check"></i> Admin Panel (if required)</li>
-                        <li><i class="fas fa-check"></i> SEO Setup</li>
-                        <li><i class="fas fa-check"></i> Contact Forms</li>
-                        <li><i class="fas fa-check"></i> WhatsApp Integration</li>
-                    </ul>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I'm%20interested%20in%20the%20Business%20Website%20package%20for%20Rs%209999" class="btn btn-whatsapp btn-full" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Get Started
-                    </a>
-                </div>
-                <div class="pricing-card">
-                    <div class="price-tag">Custom Web App / Mobile App</div>
-                    <div class="price-amount">₹29,000<span>+</span></div>
-                    <p class="price-desc">Full-featured applications with backend and custom features.</p>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Backend</li>
-                        <li><i class="fas fa-check"></i> Authentication</li>
-                        <li><i class="fas fa-check"></i> Database</li>
-                        <li><i class="fas fa-check"></i> APIs</li>
-                        <li><i class="fas fa-check"></i> Custom Features</li>
-                    </ul>
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20need%20a%20custom%20web%20app%20or%20mobile%20app%20starting%20from%20Rs%2015000" class="btn btn-outline btn-full" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Request Quote
-                    </a>
-                </div>
+                <button type="button" class="carousel-arrow carousel-arrow-right" id="recNext" aria-label="Next recommendation"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <div class="pricing-reassurance">
-                <span><i class="fas fa-check-circle"></i> Free Consultation</span>
-                <span><i class="fas fa-check-circle"></i> Transparent Pricing</span>
-                <span><i class="fas fa-check-circle"></i> Flexible Project Scope</span>
-                <span><i class="fas fa-check-circle"></i> No Hidden Charges</span>
-                <span><i class="fas fa-check-circle"></i> WhatsApp Support</span>
-            </div>
-            <div class="pricing-note">
-                <i class="fas fa-gift"></i>
-                <p><strong>Free Consultation</strong> before every project start. No obligations.</p>
+            <div class="carousel-dots" id="recDots"></div>
+            <div class="recommendations-cta">
+                <a href="https://www.linkedin.com/in/vishal-tyagi-4a4892226/" class="btn btn-outline" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i> View LinkedIn Profile
+                </a>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- FAQ -->
     <section class="faq" id="faq">
@@ -981,10 +909,10 @@
                 <h2>Have An Idea? Let's Build It Together.</h2>
                 <p>Tell me about your project and I'll help you plan the best solution.</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20have%20a%20project%20idea%20and%20want%20to%20discuss" class="btn btn-whatsapp btn-lg" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20have%20a%20project%20idea%20and%20want%20to%20discuss" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Chat On WhatsApp
                     </a>
-                    <a href="mailto:alberttyagi123@gmail.com" class="btn btn-outline btn-lg" target="_blank">
+                    <a href="mailto:alberttyagi123@gmail.com" class="btn btn-outline btn-lg">
                         <i class="fas fa-calendar-check"></i> Request Free Consultation
                     </a>
                 </div>
@@ -992,8 +920,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-    
     <!-- CONVERSION CTA -->
     <section class="cta-banner">
         <div class="container">
@@ -1003,7 +929,7 @@
                     <p>Book a free 15-minute consultation to discuss your project.</p>
                 </div>
                 <div class="cta-banner-buttons">
-                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20book%20a%20free%20consultation" class="btn btn-whatsapp" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i> Book Free Consultation
                     </a>
                     <a href="mailto:alberttyagi123@gmail.com?subject=Project%20Estimate%20Request" class="btn btn-outline">
@@ -1013,7 +939,9 @@
             </div>
         </div>
     </section>
-<section class="contact" id="contact">
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Let's Build</span>
@@ -1033,12 +961,11 @@
                         <div class="cc-icon"><i class="fab fa-whatsapp"></i></div>
                         <div class="cc-body">
                             <h4>WhatsApp</h4>
-                            <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20discuss%20a%20project" class="btn btn-whatsapp btn-sm" target="_blank">
+                            <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20want%20to%20discuss%20a%20project" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
                                 <i class="fab fa-whatsapp"></i> Chat Now
                             </a>
                         </div>
                     </div>
-            
                     <div class="contact-card">
                         <div class="cc-icon"><i class="fas fa-phone"></i></div>
                         <div class="cc-body">
@@ -1064,7 +991,7 @@
                             <a href="https://www.linkedin.com/in/vishal-tyagi-4a4892226/" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin-in"></i> LinkedIn Profile
                             </a>
-                            <a href="https://wa.me/917879490857" target="_blank">
+                            <a href="https://wa.me/917879490857" target="_blank" rel="noopener">
                                 <i class="fab fa-whatsapp"></i> WhatsApp
                             </a>
                             <a href="mailto:alberttyagi123@gmail.com">
@@ -1093,14 +1020,13 @@
                     <a href="#services">Services</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#projects">Projects</a>
-                    <a href="#pricing">Pricing</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://wa.me/917879490857" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://github.com/vishaltyagicoding" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/vishal-bairagi-4a4892226/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:alberttyagi123@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/917879490857" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/vishaltyagicoding" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vishal-bairagi-4a4892226/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:alberttyagi123@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1111,10 +1037,70 @@
     </footer>
 
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project" class="float-whatsapp" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/917879490857?text=Hi%20Vishal%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project" class="float-whatsapp" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="float-tooltip">Chat on WhatsApp</span>
     </a>
+
+    <!-- SCREENSHOT GALLERY MODAL -->
+    <div class="modal-overlay" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle">
+        <div class="modal-box gallery-modal-box">
+            <div class="modal-header">
+                <h3 id="galleryModalTitle">Screenshots</h3>
+                <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+            </div>
+            <div class="gallery-body">
+                <button type="button" class="gallery-nav gallery-nav-prev" id="galleryPrev" aria-label="Previous screenshot"><i class="fas fa-chevron-left"></i></button>
+                <div class="gallery-track" id="galleryTrack"></div>
+                <button type="button" class="gallery-nav gallery-nav-next" id="galleryNext" aria-label="Next screenshot"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-footer">
+                <span id="galleryCounter">1 / 1</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO VIDEO MODAL -->
+    <div class="modal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+        <div class="modal-box video-modal-box">
+            <div class="modal-header">
+                <h3 id="videoModalTitle">Demo Video</h3>
+                <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+            </div>
+            <div class="video-body" id="videoModalBody"></div>
+        </div>
+    </div>
+
+    <!-- CASE STUDY MODAL -->
+    <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="caseStudyTitle">
+        <div class="modal-box case-study-modal-box">
+            <div class="modal-header">
+                <h3 id="caseStudyTitle">Case Study</h3>
+                <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+            </div>
+            <div class="case-study-body">
+                <div class="cs-block">
+                    <h4><i class="fas fa-images"></i> Screenshots</h4>
+                    <div class="cs-thumbs" id="caseStudyThumbs"></div>
+                </div>
+                <div class="cs-block">
+                    <h4><i class="fas fa-layer-group"></i> Technology Stack</h4>
+                    <div class="cs-tags" id="caseStudyTags"></div>
+                </div>
+                <div class="cs-block">
+                    <h4><i class="fas fa-bullseye"></i> Business Impact</h4>
+                    <p id="caseStudyImpact"></p>
+                </div>
+                <div class="cs-block">
+                    <h4><i class="fas fa-calendar-alt"></i> Development Timeline</h4>
+                    <p id="caseStudyTimeline"></p>
+                </div>
+                <button type="button" class="btn btn-whatsapp cs-demo-btn" id="caseStudyDemoBtn" style="display:none;">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>
