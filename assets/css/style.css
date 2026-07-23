@@ -707,7 +707,7 @@ a { text-decoration: none; }
 /* ============================================
    SECTIONS COMMON
    ============================================ */
-section { padding: 80px 0; position: relative; }
+section { padding: 50px 0; position: relative; }
 
 .section-header {
     text-align: center;
@@ -760,7 +760,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    PROOF OF WORK
    ============================================ */
-.proof-section { background: var(--bg-elevated); padding: 80px 0; }
+.proof-section { background: var(--bg-elevated); padding: 20px 0; }
 
 .proof-grid {
     display: grid;
@@ -812,7 +812,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    GITHUB SHOWCASE
    ============================================ */
-.github-showcase { background: var(--bg); padding: 80px 0; }
+.github-showcase { background: var(--bg); padding: 20px 0; }
 
 .github-widgets-grid {
     display: grid;
@@ -855,7 +855,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    PROFESSIONAL PROFILES
    ============================================ */
-.profiles { background: var(--bg); padding: 80px 0; }
+.profiles { background: var(--bg); padding: 20px 0; }
 
 .profiles-grid {
     display: grid;
@@ -1066,7 +1066,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    EXPERIENCE
    ============================================ */
-.experience { background: var(--bg); }
+.experience { background: var(--bg);}
 .experience .section-header { margin-bottom: 20px; }
 .experience-intro {
     text-align: center;
@@ -1200,7 +1200,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    SERVICES
    ============================================ */
-.services { background: var(--bg); }
+.services { background: var(--bg); padding: 10px 0 40px;}
 
 .services-grid {
     display: grid;
@@ -1460,7 +1460,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    PROCESS — HOW I WORK
    ============================================ */
-.process { background: var(--bg); }
+.process { background: var(--bg); padding: 20px 0 50px;}
 
 .process-timeline { position: relative; }
 
@@ -1537,7 +1537,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    PORTFOLIO
    ============================================ */
-.portfolio { background: var(--bg-elevated); }
+.portfolio { background: var(--bg-elevated); padding: 20px 0 50px;}
 
 .portfolio-filters {
     display: flex;
@@ -1767,7 +1767,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    PROJECTS
    ============================================ */
-.projects { background: var(--bg); }
+.projects { background: var(--bg); padding: 20px 0 50px;}
 
 .projects-grid {
     display: grid;
@@ -1906,7 +1906,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    WHY CHOOSE ME
    ============================================ */
-.why { background: var(--bg-elevated); }
+.why { background: var(--bg-elevated); padding: 20px 0 50px;}
 
 .why-grid {
     display: grid;
@@ -1965,7 +1965,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    TESTIMONIALS
    ============================================ */
-.testimonials { background: var(--bg); padding: 80px 0; }
+.testimonials { background: var(--bg); padding: 20px 0; }
 
 .carousel {
     display: flex;
@@ -2108,7 +2108,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    RECOMMENDATIONS
    ============================================ */
-.recommendations { background: var(--bg-elevated); padding: 80px 0; }
+.recommendations { background: var(--bg-elevated); padding: 20px 0; }
 
 .rec-card {
     background: var(--bg-glass);
@@ -2169,7 +2169,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    FAQ
    ============================================ */
-.faq { background: var(--bg-elevated); }
+.faq { background: var(--bg-elevated); padding: 20px 0 50px;}
 
 .faq-grid {
     display: grid;
@@ -2216,7 +2216,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    FINAL CTA
    ============================================ */
-.final-cta { background: var(--bg); }
+.final-cta { background: var(--bg); padding: 20px 0 50px;}
 
 .cta-box {
     background: var(--bg-card);
@@ -2251,7 +2251,7 @@ section { padding: 80px 0; position: relative; }
 /* ============================================
    CONTACT
    ============================================ */
-.contact { background: var(--bg-elevated); }
+.contact { background: var(--bg-elevated); padding: 20px 0 50px;}
 
 .contact-grid {
     display: grid;
